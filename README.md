@@ -19,4 +19,5 @@ stream = new Stream({
 })
 stream.on('novideo', () => {console.log('无视频流')})
 stream.on('exit', () => {console.log('视频流异常或ws连接数量为0')})
+stream.on('exitWithError', () => {console.log('视频流异常')})
 ```
