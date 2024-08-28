@@ -1,7 +1,7 @@
 {
   "name": "my-node-rtsp-stream",
   "version": "0.0.1",
-  "description": "",
+  "description": "此项目基于node-rtsp-stream进行一些改造，增加一些对异常情况的监听",
   "main": "index.js",
   "scripts": {
     "prepublish": "npm run test",

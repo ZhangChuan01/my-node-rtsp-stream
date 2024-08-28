@@ -1,6 +1,6 @@
 my-node-rtsp-stream
 ================
-此项目基于node-rtsp-stream进行一些改造，增加一些对异常情况的监听，主要是个人项目使用
+此项目基于node-rtsp-stream进行一些改造，增加一些对异常情况的监听
 
 1. 10秒没有视频流 emit 'novideo'
 2. 视频流异常 emit 'exit'
