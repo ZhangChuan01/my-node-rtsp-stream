@@ -18,5 +18,6 @@
   },
   "dependencies": {
     "ws": "^7.0.0"
-  }
+  },
+  "keywords": ["node-rtsp-stream", "my-node-rtsp-stream"]
 }
