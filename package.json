@@ -1,0 +1,22 @@
+{
+  "name": "my-node-rtsp-stream",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "npm run test",
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZhangChuan01/my-node-rtsp-stream.git"
+  },
+  "author": "zc",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "ws": "^7.0.0"
+  }
+}
