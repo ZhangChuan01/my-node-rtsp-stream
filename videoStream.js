@@ -152,7 +152,7 @@ VideoStream.prototype.onSocketConnect = function(socket, request) {
     if(this.wsServer.clients.size === 0) {
       setTimeout(() => {
         console.log('sssssss')
-        this.wsServer.clients.size === 0 && this.emit('exit')
+        this.emit('exit')
       }, 10000)
     }
     return console.log(`${this.name}: Disconnected WebSocket (` + this.wsServer.clients.size + " total)")
