@@ -134,6 +134,7 @@ VideoStream.prototype.pipeStreamToSocketServer = function() {
 }
 
 VideoStream.prototype.onSocketConnect = function(socket, request) {
+  let timeout = null
   var streamHeader
   // Send magic bytes and video size to the newly connected socket
   // struct { char magic[4]; unsigned short width, height;}
@@ -146,13 +147,15 @@ VideoStream.prototype.onSocketConnect = function(socket, request) {
     binary: true
   })
   console.log(`${this.name}: New WebSocket Connection (` + this.wsServer.clients.size + " total)")
-
+  if(timeout) clearTimeout(timeout)
   socket.remoteAddress = request.connection.remoteAddress
   return socket.on("close", (code, message) => {
     if(this.wsServer.clients.size === 0) {
-      setTimeout(() => {
-        console.log('sssssss')
-        this.emit('exit')
+      timeout = setTimeout(() => {
+        console.log('sssssss',this.wsServer.clients.size,'aaaaaaaaaaaa')
+        if(this.wsServer.clients.size === 0){
+          this.emit('exit')
+        }
       }, 10000)
     }
     return console.log(`${this.name}: Disconnected WebSocket (` + this.wsServer.clients.size + " total)")
